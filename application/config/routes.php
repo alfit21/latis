@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -49,6 +49,36 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'welcome';
+$route['default_controller'] = 'siswa';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+
+// admin
+$route['admin'] = 'admin/index';
+$route['admin/create'] = 'admin/create';
+$route['admin/save'] = 'admin/save';
+$route['admin/edit/(:num)'] = 'admin/edit/$1';
+$route['admin/editSave/(:num)'] = 'admin/editSave/$1';
+$route['admin/delete/(:num)'] = 'admin/delete/$1';
+
+
+// siswa
+$route['siswa'] = 'siswa/index';          // list siswa
+$route['siswa/create'] = 'siswa/create';  // tambah siswa
+$route['siswa/createSave'] = 'siswa/save';  // tambah save
+$route['siswa/edit/(:num)'] = 'siswa/edit/$1'; // edit siswa berdasarkan ID
+$route['siswa/editSave/(:num)'] = 'siswa/editSave/$1'; // edit save siswa berdasarkan ID
+$route['siswa/delete/(:num)'] = 'siswa/delete/$1'; // hapus
+$route['siswa/export'] = 'siswa/exportExcel';
+
+
+
+// profile
+$route['profile'] = 'profile/index';          // list profile
+$route['profile/show'] = 'profile/show'; //detail profile
+
+// auth
+$route['logout'] = 'auth/logout';
+$route['login'] = 'auth/index';
+$route['auth/check'] = 'auth/check';
