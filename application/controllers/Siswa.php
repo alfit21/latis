@@ -74,6 +74,7 @@ class Siswa extends CI_Controller
 			$config['upload_path'] = './assets/uploads/';
 			$config['allowed_types'] = 'jpg|png';
 			$config['max_size'] = 100;
+			$config['file_name']     = uniqid('foto_') . '_' . time();
 
 			$this->load->library('upload', $config);
 			if (!$this->upload->do_upload('foto')) {
@@ -155,6 +156,7 @@ class Siswa extends CI_Controller
 			$config['upload_path'] = './assets/uploads/';
 			$config['allowed_types'] = 'jpg|png';
 			$config['max_size'] = 100;
+			$config['file_name']     = uniqid('foto_') . '_' . time();
 
 			$this->load->library('upload', $config);
 			if ($this->upload->do_upload('foto')) {
